@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    border-bottom: 1px solid #cfcfcf;
+    background: #f8f8f8;
+}
+
+/* LOGO + NAME */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* NAV LINKS */
+/* NAVIGATION LINKS */
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+/* MODERN HOVER EFFECT */
+nav a:hover {
+    background: #e4e4e4;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+.btn-primary {
+    padding: 8px 16px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* BLOG HEADER */
+.blog-header {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.blog-header-inner {
+    padding: 0 20px;
+}
+
+/* AUTHOR + ICONS ROW */
+.author-and-icons {
+    display: flex;
+    justify-content: space-between;   /* left + right */
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* AUTHOR LEFT SIDE */
+.author-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ICONS RIGHT SIDE */
+.share-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-circle {
+    width: 28px;
+    height: 28px;
+    background: #f3f3f3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-circle i {
+    font-size: 13px;
+    color: #000;
+}
+
+.icon-circle:hover {
+    background: #e0e0e0;
+}
+
+
+/* BANNER */
+.banner img {
+    width: calc(100% - 100px); /* keeps margin without overflow */
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto; /* centers image */
+    align-items: center; /* centers image */
+}
+
+/* MAIN CONTENT */
+.content-section {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+/* QUOTE */
+blockquote {
+    font-style: italic;
+    padding-left: 20px;
+    border-left: 4px solid #ccc;
+    margin: 20px 0;
+}
+
+/* TRENDING */
+.trending {
+    padding: 60px;
+    background: #fafafa;
+}
+
+.trend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.trend-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.trend-card a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.newsletter img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.newsletter-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter-box input {
+    padding: 10px;
+    width: 250px;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: white;
+    padding: 40px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer .column p {
+    margin: 4px 0;
+}
+
+.footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #bbb;
+}

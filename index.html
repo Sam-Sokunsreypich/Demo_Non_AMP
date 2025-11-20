@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Blog Homepage</title>
+  <link rel="canonical" href="index.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <style>
+    /* reset for images used as responsive */
+    img.responsive { width:100%; height:auto; display:block; }
+
+    body { font-family: Arial, sans-serif; margin:0; }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 60px;
+        border-bottom: 1px solid #cfcfcf;
+        background: #f8f8f8;
+    }
+    .navbar nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+    nav a:hover {
+      background: #e4e4e4;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+    .btn-primary {
+      padding: 8px 16px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .hero { padding:40px 20px; max-width:1200px; margin:auto; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .right-image{ display:grid; grid-template-columns:1fr 2fr; gap:10px;}
+    .section-title { font-size: 44px; margin:20px 0; font-weight: bold;}
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top: 20px; }
+    .card { border:0px solid #ddd; border-radius:8px; overflow:hidden; background:#fff; padding: 8px; }
+    .card-info { padding:15px; }
+
+    .newsletter-banner {
+      margin: 40px 0;
+      position: relative;
+      height: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      background: #000; /* fallback if image fails */
+    }
+    .newsletter-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+    .newsletter-banner img.bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .newsletter-banner h2,
+    .newsletter-banner p {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      margin: 0;
+    }
+    .newsletter-banner h2 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .newsletter-banner p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    .btn{
+      background: #fff;
+      color: black;
+      border-radius: 10px;
+      border-color:gray;
+      padding: 8px 16px 8px 16px;
+    }
+
+    /* ad placeholder style */
+    .ad-placeholder {
+      width: 300px;
+      height: 250px;
+      background: #efefef;
+      color:#333;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px dashed #ccc;
+      margin: 10px 0;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #111;
+      color: white;
+      padding: 40px;
+    }
+    .footer-columns {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .footer-logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .footer .column p {
+      margin: 4px 0;
+    }
+    .footer .copyright {
+      text-align: center;
+      margin-top: 20px;
+      color: #bbb;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width: 768px){
+      .hero-grid { grid-template-columns: 1fr; }
+      .right-image { grid-template-columns: 1fr; }
+      .navbar { padding: 12px 20px; }
+      .footer-columns { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <!-- LOGO + NAME -->
+    <div class="logo-group">
+        <div class="logo-img">
+            <img src="assets/pic_logo.png" alt="Logo">
+        </div>
+        <div class="logo-text">Ddsgnr</div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <div class="search-icon"><a href="#">Log in</a></div>
+        <button class="btn-primary">Get started</button>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <small>Blog</small>
+    <h1>Stay Informed and Inspired with Ddsgnr News</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    <div style="margin-top: 50px;">
+      <h4 class="text-bold">Featured blog posts</h4>
+      <div class="hero-grid">
+      <!-- Left image -->
+      <div>
+        <img class="responsive" src="https://picsum.photos/800/500" width="800" height="500" alt="Featured">
+        <div style="margin-top: 5px;">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>How to choose the right customer for your photo business?</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <p>Read more &gt;</p>
+        </div>
+      </div>
+
+      <!-- Right sub-cards -->
+      <div style="display:grid; gap:15px;">
+        <!-- image 1 -->
+        <div class="right-image" >
+          <img class="responsive" src="https://picsum.photos/400/250" width="400" height="250" alt="Sub 1">
+          <div style="padding-bottom: 20px; padding-top: 20px; ">
+            <div>
+              <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+              <small>5 min read</small>
+            </div>
+            <p style="font-weight: bold;">How to choose the right customer for your photo business?</p>
+            <p>Read more &gt;</p>
+          </div>
+        </div>
+
+        <!-- image 2 -->
+        <div class="right-image" >
+          <img class="responsive" src="https://picsum.photos/400/250?2" width="400" height="250" alt="Sub 2">
+          <div style="padding-bottom: 20px; padding-top: 20px; ">
+            <div>
+              <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+              <small>5 min read</small>
+            </div>
+            <p style="font-weight: bold;">How to choose the right customer for your photo business?</p>
+            <p>Read more &gt;</p>
+          </div>
+        </div>
+
+        <!-- image 3 -->
+        <div class="right-image" >
+          <img class="responsive" src="https://picsum.photos/400/250?3" width="350" height="200" alt="Sub 3">
+          <div style="padding-bottom: 20px; padding-top: 20px; ">
+            <div>
+              <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+              <small>5 min read</small>
+            </div>
+            <p style="font-weight: bold;">How to choose the right customer for your photo business?</p>
+            <small>Read more &gt;</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="hero">
+  <video
+    width="640"
+    height="360"
+    controls
+    autoplay
+    loop
+    muted
+    style="max-width: 100%; height: auto;"
+  >
+    <source src="./video/Screen Recording 2025-11-19 102539.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
+  <!-- NEWSLETTER BANNER -->
+  <div class="newsletter-banner">
+    <img class="bg" src="https://i.pinimg.com/1200x/0c/ff/78/0cff78dfd407a950e048df7532ec1836.jpg" alt="Newsletter background">
+    <h2>Sign up for our newsletter</h2>
+    <p>Receive updates and exclusive articles.</p>
+  </div>
+
+
+  <!-- POPULAR SECTION -->
+  <section class="hero">
+    <h3 class="section-title">Popular</h3>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      <button class="btn">View all</button>
+    </div>
+    <div class="card-grid">
+      <!-- CARD 1 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350" width="600" height="350" alt="Card 1">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350?2" width="600" height="350" alt="Card 2">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350?3" width="600" height="350" alt="Card 3">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350?4" width="600" height="350" alt="Card 4">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350?5" width="600" height="350" alt="Card 5">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350?6" width="600" height="350" alt="Card 6">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRENDING SECTION -->
+  <section class="hero">
+    <h3 class="section-title">Trending</h3>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      <button class="btn">View all</button>
+    </div>
+    <div class="card-grid">
+      <!-- CARD 1 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350" width="600" height="350" alt="Trending 1">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350?2" width="600" height="350" alt="Trending 2">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <img class="responsive" style="border-radius: 8px;" src="https://picsum.photos/600/350?3" width="600" height="350" alt="Trending 3">
+        <div class="card-info">
+          <div>
+            <button style="background: #ccc; border: 0px;"><small>Food</small></button>
+            <small>5 min read</small>
+          </div>
+          <h3>Travelling as a way of self-discovery and progress</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+          <small>Read more &gt;</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AD / EMBED REPLACEMENTS (placeholders) -->
+  <div class="hero">
+    <div class="ad-placeholder">Ad placeholder (300x250)</div>
+
+    <!-- If you want a content widget, replace with your script/iframe -->
+    <div style="margin-top:10px;">
+      <div class="ad-placeholder" style="width:100%; height:300px;">Widget / Embed placeholder</div>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div class="ad-placeholder" style="position:fixed; bottom:10px; right:10px;">Sticky Ad placeholder 300x250</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-columns">
+        <div class="footer-logo">Ddsgnr</div>
+
+        <div class="column">
+            <h4>About Us</h4>
+            <p>Popular</p>
+            <p>Trending</p>
+            <p>Contact</p>
+        </div>
+
+        <div class="column">
+            <h4>Column Two</h4>
+            <p>FAQs</p>
+            <p>Terms and Condition</p>
+        </div>
+
+        <div class="column">
+            <h4>Follow Us</h4>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Twitter</p>
+        </div>
+    </div>
+
+    <p class="copyright">2022 Ddsgnr. All right reserved.</p>
+  </footer>
+
+</body>
+</html>
