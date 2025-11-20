@@ -122,10 +122,11 @@ nav a:hover {
 
 /* BANNER */
 .banner img {
-    width: calc(100% - 100px); /* keeps margin without overflow */
+    width: 80%; /* keeps margin without overflow */
     max-width: 100%;
-    height: auto;
+    height: 560px;
     border-radius: 6px;
+    object-fit: cover;
     display: block;
     margin: 0 auto; /* centers image */
     align-items: center; /* centers image */
@@ -135,95 +136,426 @@ nav a:hover {
 .content-section {
     max-width: 800px;
     margin: 40px auto;
+    padding: 0 20px;       /* keeps good side spacing */
+    line-height: 1.6;      /* nice readable text */
 }
 
-/* QUOTE */
-blockquote {
-    font-style: italic;
-    padding-left: 20px;
-    border-left: 4px solid #ccc;
+/* ARTICLE IMAGE */
+.article-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
     margin: 20px 0;
 }
 
-/* TRENDING */
-.trending {
-    padding: 60px;
-    background: #fafafa;
+/* IMAGE CAPTION */
+.caption {
+    font-size: 14px;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
+/* HEADINGS */
+.content-section h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.content-section h3 {
+    margin-top: 30px;
+}
+
+/* QUOTE STYLE */
+blockquote {
+    font-style: italic;
+    padding: 15px 20px;
+    border-left: 4px solid #ccc;
+    margin: 25px 0;
+    color: #555;
+}
+
+/* AUTHOR BOX AT BOTTOM */
+.content-section .author-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.content-section .author-box img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* SHARE SECTION — FLEX LEFT & RIGHT */
+.share-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* LEFT SIDE SHARE ICONS */
+.share-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.icon-circle {
+    width: 32px;
+    height: 32px;
+    background: #f3f3f3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-circle i {
+    font-size: 14px;
+    color: #000;
+}
+
+.icon-circle:hover {
+    background: #e0e0e0;
+}
+
+/* RIGHT SIDE CATEGORY BUTTONS */
+.share-icons-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.share-icons-btn button {
+    background: #f5f5f5;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.share-icons-btn button:hover {
+    background: #e2e2e2;
+}
+
+
+
+/* TRENDING SECTION */
+.trending {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+/* HEADER */
 .trend-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.trend-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* SUBTITLE */
+.trend-subtitle {
+    color: #666;
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+/* VIEW ALL BUTTON */
+.view-all {
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.view-all:hover {
+    background: #f3f3f3;
+}
+
+/* GRID */
 .trend-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 35px;
     margin-top: 30px;
 }
 
+/* CARD IMAGE */
 .trend-card img {
     width: 100%;
-    border-radius: 6px;
-}
-
-.trend-card a {
-    text-decoration: none;
-    color: #222;
-    font-weight: bold;
-}
-
-/* NEWSLETTER */
-.newsletter {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.newsletter img {
-    width: 100%;
-    max-height: 200px;
+    height: 230px;
     object-fit: cover;
     border-radius: 6px;
+    margin-bottom: 15px;
 }
 
+/* CATEGORY TAG */
+.category {
+    display: inline-block;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* TITLE */
+.trend-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+}
+
+/* TEXT */
+.trend-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* READ MORE */
+.trend-card a {
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.trend-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* NEWSLETTER */
+/* FULL BACKGROUND IMAGE SECTION */
+.newsletter {
+    background-image: url("assets/pic_email.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 120px 40px;
+    color: #fff;
+    position: relative;
+}
+
+/* DARK OVERLAY for readability */
+.newsletter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35); /* dark overlay */
+}
+
+/* CONTENT ABOVE IMAGE */
+.newsletter-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.newsletter h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* INPUT + BUTTON BOX */
 .newsletter-box {
-    margin-top: 20px;
     display: flex;
-    justify-content: center;
     gap: 10px;
 }
 
 .newsletter-box input {
-    padding: 10px;
-    width: 250px;
+    width: 320px;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
 }
 
-/* FOOTER */
-.footer {
-    background: #111;
-    color: white;
-    padding: 40px;
-}
-
-.footer-columns {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.footer-logo {
-    font-size: 22px;
+.newsletter-box button {
+    padding: 14px 24px;
+    font-size: 16px;
+    border: none;
+    background: #fff;
+    color: #000;
+    border-radius: 6px;
+    cursor: pointer;
     font-weight: bold;
 }
 
-.footer .column p {
-    margin: 4px 0;
+.newsletter-box button:hover {
+    background: #e5e5e5;
 }
 
-.footer .copyright {
-    text-align: center;
-    margin-top: 20px;
-    color: #bbb;
+/* TERMS TEXT */
+.terms {
+    font-size: 14px;
+    margin-top: 12px;
+    color: #eaeaea;
 }
+
+.terms a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* FOOTER */
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 60px 80px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* LEFT COLUMN (logo + newsletter) */
+.footer-logo-column {
+    max-width: 400px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 36px;
+}
+
+.newsletter-text {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.newsletter-footer-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.newsletter-footer-box input {
+    width: 230px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background: #000;
+    color: #fff;
+}
+
+.newsletter-footer-box button {
+    padding: 12px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 6px;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+
+.newsletter-footer-box button:hover {
+    background: #111;
+}
+
+.privacy-text {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.privacy-text a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* RIGHT COLUMNS */
+.footer-columns {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-columns .column h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-columns .column p {
+    margin: 6px 0;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.footer-columns .column p:hover {
+    color: #fff;
+}
+
+/* SOCIAL */
+.social-column .social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0;
+}
+
+.social-column i {
+    font-size: 18px;
+}
+
+/* DIVIDER */
+.footer-divider {
+    border-color: #333;
+    margin: 40px 0 20px;
+}
+
+/* BOTTOM FOOTER */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin-left: 20px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
